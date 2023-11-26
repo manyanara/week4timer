@@ -78,22 +78,61 @@ function displayQuestions() {
     option4.textContent = question.D;
 }
  //adds to score based on true/false values and moves to next question
-// var answerbutton = document.querySelector(".answer")
+// function checkAnswer
 
-// answerbutton.addEventListener("click", function () {
-//     var question = questions[questionIndex];
-//     if (answerbutton.textContent === question.correct_answer){
-//         score ++,
-//         setTime(secondsLeft + 5)
-//         questionIndex += 1,
-//         displayQuestions(questionIndex)
-//     } else
-//     questionIndex += 1, 
-//     score-= 1,
-//     setTime(secondsLeft-5)
-//     displayQuestions(questionIndex)
-// })
- 
+document.getElementById("answer1").addEventListener("click", function checkAnswer() {
+    var question = questions[questionIndex];
+    if (this.textContent === question.correct_answer){
+        score ++,
+        setTime(secondsLeft + 5)
+        questionIndex += 1,
+        displayQuestions(questionIndex)
+    } else
+    questionIndex += 1, 
+    score-= 1,
+    setTime(secondsLeft-5)
+    displayQuestions(questionIndex)
+});
+document.getElementById("answer2").addEventListener("click", function checkAnswer() {
+    var question = questions[questionIndex];
+    if (this.textContent === question.correct_answer){
+        score ++,
+        setTime(secondsLeft + 5)
+        questionIndex += 1,
+        displayQuestions(questionIndex)
+    } else
+    questionIndex += 1, 
+    score-= 1,
+    setTime(secondsLeft-5)
+    displayQuestions(questionIndex)
+});
+document.getElementById("answer3").addEventListener("click", function checkAnswer() {
+    var question = questions[questionIndex];
+    if (this.textContent === question.correct_answer){
+        score ++,
+        setTime(secondsLeft + 5)
+        questionIndex += 1,
+        displayQuestions(questionIndex)
+    } else
+    questionIndex += 1, 
+    score-= 1,
+    setTime(secondsLeft-5)
+    displayQuestions(questionIndex)
+});
+document.getElementById("answer4").addEventListener("click", function checkAnswer() {
+    var question = questions[questionIndex];
+    if (this.textContent === question.correct_answer){
+        score ++,
+        setTime(secondsLeft + 5)
+        questionIndex += 1,
+        displayQuestions(questionIndex)
+    } else
+    questionIndex += 1, 
+    score-= 1,
+    setTime(secondsLeft-5)
+    displayQuestions(questionIndex)
+});
+
 
 // save initials and score 
 // if (questionIndex > 4) {
@@ -103,6 +142,5 @@ function displayQuestions() {
 //     questionEl.textContent = "Score:"
 
 // }
-
 displayQuestions();
 setTime();
