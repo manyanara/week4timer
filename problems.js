@@ -49,7 +49,7 @@ const questions = [
         "correct_answer": "Vrv3",
         "A": "Atomic Allure",
         "B": "VrV3",
-        "C": "Your dads house",
+        "C": "none",
         "D": "SF Spin + Pole"
     },
     {
@@ -92,6 +92,10 @@ document.getElementById("answer1").addEventListener("click", function checkAnswe
     score-= 1,
     setTime(secondsLeft-5)
     displayQuestions(questionIndex)
+
+    if (questionIndex == 4){
+        setScore();
+    }
 });
 document.getElementById("answer2").addEventListener("click", function checkAnswer() {
     var question = questions[questionIndex];
@@ -105,6 +109,10 @@ document.getElementById("answer2").addEventListener("click", function checkAnswe
     score-= 1,
     setTime(secondsLeft-5)
     displayQuestions(questionIndex)
+
+    if (questionIndex == 4){
+        setScore();
+    }
 });
 document.getElementById("answer3").addEventListener("click", function checkAnswer() {
     var question = questions[questionIndex];
@@ -118,7 +126,12 @@ document.getElementById("answer3").addEventListener("click", function checkAnswe
     score-= 1,
     setTime(secondsLeft-5)
     displayQuestions(questionIndex)
+    
+    if (questionIndex == 4){
+        setScore();
+    }
 });
+
 document.getElementById("answer4").addEventListener("click", function checkAnswer() {
     var question = questions[questionIndex];
     if (this.textContent === question.correct_answer){
@@ -131,16 +144,23 @@ document.getElementById("answer4").addEventListener("click", function checkAnswe
     score-= 1,
     setTime(secondsLeft-5)
     displayQuestions(questionIndex)
+
+    if (questionIndex == 4){
+        setScore();
+    }
 });
+// opens form to add name and score
+
+function setScore(){
+    var name= window.prompt('Enter your name to view scores')
+    localStorage.setItem("score", score);
+    localStorage.setItem("name", name)
+
+    document.getElementsByClassName('answer').innerHTML = " ";
+    
+    document.getElementById('questionText').textContent= "Score:" + " " + score 
+}
 
 
-// save initials and score 
-// if (questionIndex > 4) {
-//     var questionEl = document.getElementById("questionText")
-//     var answerEl= document.querySelector(".answer")
-
-//     questionEl.textContent = "Score:"
-
-// }
 displayQuestions();
 setTime();
