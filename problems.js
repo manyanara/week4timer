@@ -89,11 +89,10 @@ document.getElementById("answer1").addEventListener("click", function checkAnswe
         displayQuestions(questionIndex)
     } else
     questionIndex += 1, 
-    score-= 1,
     setTime(secondsLeft-5)
     displayQuestions(questionIndex)
 
-    if (questionIndex == 4){
+    if (questionIndex == 5 || secondsLeft === 0){
         setScore();
     }
 });
@@ -106,11 +105,10 @@ document.getElementById("answer2").addEventListener("click", function checkAnswe
         displayQuestions(questionIndex)
     } else
     questionIndex += 1, 
-    score-= 1,
     setTime(secondsLeft-5)
     displayQuestions(questionIndex)
 
-    if (questionIndex == 4){
+    if (questionIndex == 5|| secondsLeft === 0){
         setScore();
     }
 });
@@ -123,11 +121,10 @@ document.getElementById("answer3").addEventListener("click", function checkAnswe
         displayQuestions(questionIndex)
     } else
     questionIndex += 1, 
-    score-= 1,
     setTime(secondsLeft-5)
     displayQuestions(questionIndex)
     
-    if (questionIndex == 4){
+    if (questionIndex == 5 || secondsLeft === 0){
         setScore();
     }
 });
@@ -141,11 +138,10 @@ document.getElementById("answer4").addEventListener("click", function checkAnswe
         displayQuestions(questionIndex)
     } else
     questionIndex += 1, 
-    score-= 1,
     setTime(secondsLeft-5)
     displayQuestions(questionIndex)
 
-    if (questionIndex == 4){
+    if (questionIndex ==5  || secondsLeft === 0){
         setScore();
     }
 });
@@ -153,12 +149,35 @@ document.getElementById("answer4").addEventListener("click", function checkAnswe
 
 function setScore(){
     var name= window.prompt('Enter your name to view scores')
-    localStorage.setItem("score", score);
-    localStorage.setItem("name", name)
+    // localStorage.setItem("score", score);
+    // localStorage.setItem("name", name)
 
-    document.getElementsByClassName('answer').innerHTML = " ";
+    var user = {
+        firstName: name,
+        finalScore: score, 
+    }
+
+    localStorage.setItem("user", JSON.stringify(user));
     
-    document.getElementById('questionText').textContent= "Score:" + " " + score 
+    renderScores();
+}
+
+function renderScores() {
+    var lastGrade = JSON.parse(localStorage.getItem('user'));
+    if (lastGrade !== null){
+        document.getElementById('pastScores').style.display = 'block'
+
+        document.getElementById('saved-name').innerHTML = lastGrade.firstName;
+        document.getElementById('saved-grade').innerHTML = lastGrade.score;
+    }
+
+    var buttons = document.getElementsByClassName('.answer')
+    buttons.style.display = 'none';
+    
+    document.getElementById('questionText').textContent= lastGrade.firstName + " received " + score + " out of 5 "
+
+    var pastScores = document.getElementById('pastScores')
+    pastScores.style.display= 'block';
 }
 
 
