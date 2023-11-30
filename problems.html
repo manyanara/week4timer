@@ -4,30 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link name="stylesheet" href="style.css">
+    <link name="stylesheet" href="./style.css">
     <title>Quiz</title>
 </head>
 <body>
-    <header>
-            Time: <span id="time">0</span>
+    <header style="text-align: end;">
+        <h2>
+            Time: <span id="time"></span>
+        </h2> 
     </header>
     <main style ="text-align: center;">
-        <h2>
+        <h2 class="questionText" id="questionText">
             Question Text:
         </h2>
-        <button>
+        <h2 hidden id="pastScores">
+            Past Scores:
+            <ul id="scoreList"></ul>
+        </h2>
+    <div id="buttons"> 
+        <button class="answer" id="answer1">
             Option 1
         </button>
-        <button>
+        <button  class="answer" id="answer2">
             Option 2
         </button>
-        <button>
+        <button class="answer" id="answer3">
             Option 3
         </button>
-        <button>
+        <button class="answer" id="answer4">
             Option 4
         </button>
+    </div>
     </main>
-<script src="script.js"></script>
+    <script src="problems.js"></script>
 </body>
 </html>
