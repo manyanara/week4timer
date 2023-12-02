@@ -1,3 +1,44 @@
-#pastScores {
-    display:none;
+* {
+    background-color: rgb(173, 198, 220);
+    /* border: 5px solid red; */
+    font-family: 'Kanit', sans-serif;
+    color: rgb(55, 29, 69);
+}
+
+:root {
+    --background: rgb(238, 238, 230);
+
+}
+
+body {
+    position: relative; 
+    top: 50%;
+}
+
+main {
+    position: relative;
+    background:var(--background);
+    top: 15rem;
+    left: 10%;
+    width: 100rem;
+    border: 5px solid rgb(28, 23, 23 0.9);
+}
+header, #time {
+    background-color: var(--background);
+}
+h2 {
+    background-color: var(--background);
+    font-weight: 1000;
+    font-size: 2em;
+}
+
+li {
+    background-color: var(--background);
+    text-align: left;
+    list-style: none;
+}
+
+button {
+    background-color: beige;
+    font-weight: 500;
 }
