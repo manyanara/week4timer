@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&display=swap" rel="stylesheet">
+    <title>Quiz</title>
+</head>
+<body>
+    <header style="text-align: end;">
+        <h2>
+            Time: <span id="time"></span>
+        </h2> 
+    </header>
+    <main style ="text-align: center;">
+        <h2 class="questionText" id="questionText">
+            Question Text:
+        </h2>
+        <h2 hidden id="pastScores" style="text-align: left;">
+            Past Scores:
+            <ul id="scoreList"></ul>
+        </h2>
+    <div id="buttons"> 
+        <button class="answer" id="answer1">
+            Option 1
+        </button>
+        <button  class="answer" id="answer2">
+            Option 2
+        </button>
+        <button class="answer" id="answer3">
+            Option 3
+        </button>
+        <button class="answer" id="answer4">
+            Option 4
+        </button>
+    </div>
+    </main>
+    <script src="problems.js"></script>
+</body>
+</html>
