@@ -24,11 +24,11 @@ var score = 0;
 const questions = [
     {
         "text": "What does HTML stand for?",
-        "correct_answer": "The Burj Khalifa", 
-        "A": "Empire States Building",
-        "B": "Salesforce Tower",
-        "C": "The Burj Khalifa",
-        "D": "The Pentagon"
+        "correct_answer": "Hypertext Markup Language", 
+        "A": "Hyphy Techno Million Language",
+        "B": "Hyper Technology Mandate Longitude",
+        "C": "Hand Tool Making Languages",
+        "D": "Handsome Tree Man Life"
     },
     {
         "text": "Pick the correct parameter placement",
